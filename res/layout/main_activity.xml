@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="60dip"
+    android:paddingBottom="60dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="0dip" >
+        <TextView 
+            android:id="@+id/all_question"
+            android:text="顺序练习"
+			style="@style/board_item"            
+            />
+        <TextView 
+            android:id="@+id/chapter"
+            android:text="章节练习"
+            style="@style/board_item"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="0dip"  >
+        <TextView 
+            android:id="@+id/wrong_question"
+            android:text="错题练习"
+            style="@style/board_item"
+            />
+        <TextView 
+            android:id="@+id/random"
+            android:text="随机练习"
+            style="@style/board_item"
+            />
+    </LinearLayout>
+
+</LinearLayout>
