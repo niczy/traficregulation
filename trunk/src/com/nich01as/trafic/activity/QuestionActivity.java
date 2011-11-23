@@ -1,4 +1,4 @@
-package com.nich01as.trafic;
+package com.nich01as.trafic.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,8 +17,13 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import com.loopj.android.image.SmartImageView;
+import com.nich01as.trafic.Question;
+import com.nich01as.trafic.QuestionManager;
+import com.nich01as.trafic.R;
+import com.nich01as.trafic.R.id;
+import com.nich01as.trafic.R.layout;
 
-public class MainActivity extends Activity implements OnClickListener, OnCheckedChangeListener {
+public class QuestionActivity extends Activity implements OnClickListener, OnCheckedChangeListener {
     
     private static final String TAG = "Trafic";
 
@@ -42,7 +47,7 @@ public class MainActivity extends Activity implements OnClickListener, OnChecked
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.question_activity);
         mRadioGroup = (RadioGroup) findViewById(R.id.radio_group);
         mIndex = (TextView) findViewById(R.id.question_id);
         mDescription = (TextView) findViewById(R.id.descripion);
@@ -132,7 +137,7 @@ public class MainActivity extends Activity implements OnClickListener, OnChecked
     }
 
     private void showQuestion(int idx) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, QuestionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(EXTRA_INDEX, idx);
         startActivity(intent);
