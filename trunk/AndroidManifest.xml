@@ -9,6 +9,7 @@
     <application
         android:theme="@android:style/Theme.Light.NoTitleBar"
         android:icon="@drawable/ic_launcher"
+        android:name=".TraficApp"
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
@@ -21,7 +22,19 @@
         </activity>
         <activity
             android:label="@string/app_name"
-            android:name=".activity.QuestionActivity" >
+            android:name=".activity.AllQuestionActivity" >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".activity.ChapterQuestionActivity" >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".activity.RandomQuestionActivity" >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name=".activity.WrongQuestionActivity" >
         </activity>
         <activity
             android:label="@string/app_name"

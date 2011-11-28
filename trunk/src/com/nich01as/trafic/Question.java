@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import android.text.TextUtils;
 
 /**
@@ -21,7 +24,7 @@ public class Question {
     
     private int mIndex;
     
-    private int mCategory;
+    private int mChapter;
     
     private String mDescription;
     
@@ -31,13 +34,15 @@ public class Question {
     
     private String mImageUrl;
     
+    public Question() {};
+    
     public Question(String line) {
         if (line == null) {
             throw new IllegalArgumentException("line cannot be null.");
         }
         String[] seg = line.split("\t");
         mIndex = Integer.parseInt(seg[0]);
-        mCategory = Integer.parseInt(seg[1]);
+        mChapter = Integer.parseInt(seg[1]);
         mDescription = seg[2];
         for (int i = 3; i < seg.length - 2; i++) {
             if (!TextUtils.isEmpty(seg[i])) {
@@ -57,27 +62,58 @@ public class Question {
         return mDescription;
     }
     
+    public void setDescription(String description) {
+        mDescription = description;
+    }
+    
     public int getIndex() {
         return mIndex;
     }
     
-    public int getCategory() {
-        return mCategory;
+    public void setIndex(int index) {
+        mIndex = index;
+    }
+    
+    public int getChapter() {
+        return mChapter;
+    }
+    
+    public void setChapter(int chapter) {
+        mChapter = chapter;
     }
     
     public int getAnswerIdx() {
         return mAnswer;
     }
     
-    public String getAnswer() {
-        return mChoices.get(mAnswer);
+    public void setAnswerIdx(int answerIdx) {
+        mAnswer = answerIdx;
     }
+    
+//    public String getAnswer() {
+//        return mChoices.get(mAnswer);
+//    }
     
     public List<String> getChoices() {
         return Collections.unmodifiableList(mChoices);
     }
     
+    public void setChoices(JSONArray choices) throws JSONException {
+        mChoices = new ArrayList<String>(choices.length());
+        for (int i = 0; i < choices.length(); i++) {
+            mChoices.add(choices.getString(i));
+        }
+    }
+    
+    public void setChoices(List<String> choices) {
+        mChoices = choices;
+    }
+    
     public String getImageUrl() {
         return mImageUrl;
+    }
+    
+    public void setImageUrl(String imageUrl) {
+        mImageUrl = imageUrl;
     }
 }
