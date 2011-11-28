@@ -37,5 +37,4 @@ public class WrongQuestionActivity extends ListQuestionActivity {
             e.printStackTrace();
         }
     }
-
 }

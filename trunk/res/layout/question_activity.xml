@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/background"
     android:padding="20dip" >
 
 
@@ -16,7 +17,8 @@
             android:id="@+id/previous"
             android:layout_width="0dip"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/light_grey_bg"
             android:text="上一题" />
         
         <Button
@@ -24,14 +26,18 @@
             android:id="@+id/ok"
             android:layout_width="0dip"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/dark_blue_bg"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
             android:text="确定" />
         <Button
             android:layout_marginLeft="5dip"
             android:id="@+id/next"
             android:layout_width="0dip"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/light_grey_bg"
             android:text="下一题" />
     </LinearLayout>
     <ScrollView 

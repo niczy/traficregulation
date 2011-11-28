@@ -202,14 +202,14 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
                 });
                 mFadeoutAnimation.setAnimationListener(new AnimationListener() {
                     @Override
-                    public void onAnimationStart(Animation animation) {}
+                    public void onAnimationStart(Animation animation) {animateView.setVisibility(View.GONE);}
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {}
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        animateView.setVisibility(View.GONE);
+                        
                     }
                 });
                 animateView.startAnimation(mFadeinAnimation);
