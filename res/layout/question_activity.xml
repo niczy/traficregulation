@@ -54,7 +54,7 @@
     
     <ImageView
         android:id="@+id/result_correct" 
-        android:background="@android:color/black"
+        android:background="@drawable/right"
         android:layout_width="40dip"
         android:layout_height="40dip"
         android:visibility="gone"
@@ -63,7 +63,7 @@
     
     <ImageView
         android:id="@+id/result_wrong" 
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/wrong"
         android:layout_width="40dip"
         android:layout_height="40dip"
         android:visibility="gone"

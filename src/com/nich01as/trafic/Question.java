@@ -9,6 +9,8 @@ package com.nich01as.trafic;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,8 +36,14 @@ public class Question {
     
     private String mImageUrl;
     
+    private Pattern urlPattern = Pattern.compile("“ <img src='([^']*)' >”");
+    
     public Question() {};
     
+    /**
+     * “ <img src='http://kspic.jxedt.com/2010pic/image277.jpg' >”
+     * @param line
+     */
     public Question(String line) {
         if (line == null) {
             throw new IllegalArgumentException("line cannot be null.");
@@ -49,7 +57,13 @@ public class Question {
                 mChoices.add(seg[i]);
             }
         }
-        mImageUrl = seg[seg.length-2];
+        Matcher matcher = urlPattern.matcher(mDescription);
+        if (matcher.find()) {
+            mImageUrl = matcher.group(1);
+            mDescription = mDescription.replace(matcher.group(), "");
+        } else {
+            mImageUrl = seg[seg.length-2];
+        }
         mAnswer = Integer.parseInt(seg[seg.length-1])-1;
     }
     
