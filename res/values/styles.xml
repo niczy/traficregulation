@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="board_item">
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="big_number">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ff2F4F4F</item>
+        <item name="android:paddingRight">2dip</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    
+    <style name="big_number.fix_width">
+        <item name="android:layout_width">30dip</item>
+    </style>
+
 </resources>

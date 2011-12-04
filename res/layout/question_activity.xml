@@ -48,6 +48,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
             android:layout_weight="1"
             android:background="@drawable/light_grey_bg_selector"
             android:text="下一题" />

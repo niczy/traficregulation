@@ -45,4 +45,12 @@ public class WrongQuestionActivity extends ListQuestionActivity {
             e.printStackTrace();
         }
     }
+
+    /* (non-Javadoc)
+     * @see com.nich01as.trafic.activity.QuestionActivity#getTag()
+     */
+    @Override
+    protected String getTag() {
+        return "wrong";
+    }
 }

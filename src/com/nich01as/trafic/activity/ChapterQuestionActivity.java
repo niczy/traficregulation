@@ -38,4 +38,12 @@ public class ChapterQuestionActivity extends ListQuestionActivity {
             return null;
         }
     }
+
+    /* (non-Javadoc)
+     * @see com.nich01as.trafic.activity.QuestionActivity#getTag()
+     */
+    @Override
+    protected String getTag() {
+        return "chapter_" + mChapter;
+    }
 }
