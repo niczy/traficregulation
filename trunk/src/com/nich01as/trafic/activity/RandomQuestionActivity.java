@@ -26,11 +26,7 @@ public class RandomQuestionActivity extends QuestionActivity {
         super.onCreate(savedInstanceState);
         mTotalCount = mDb.getTotalCount();
         mRandom = new Random();
-    }
-    
-    @Override
-    public int getCurrentQuestionId() {
-        return mRandom.nextInt(mTotalCount);
+        setCurrentQuestionId(getNextQuestionId());
     }
     
     @Override

@@ -3,70 +3,95 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
-    android:padding="20dip" >
+    android:paddingTop="3dip" >
 
+    <LinearLayout
+        android:id="@+id/ad"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/menu_layout"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/buttons_height"
         android:layout_alignParentBottom="true"
-        android:gravity="center" >
+        android:layout_marginBottom="50dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
         <Button
-            android:layout_marginLeft="5dip"
             android:id="@+id/previous"
             android:layout_width="0dip"
-            android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:background="@drawable/light_grey_bg"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/light_grey_bg_selector"
             android:text="上一题" />
-        
+
         <Button
-            android:layout_marginLeft="5dip" 
             android:id="@+id/ok"
             android:layout_width="0dip"
-            android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:background="@drawable/dark_blue_bg"
-            android:textColor="@android:color/white"
-            android:textSize="17sp"
-            android:text="确定" />
-        <Button
             android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/dark_blue_bg_selector"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+
+        <Button
             android:id="@+id/next"
             android:layout_width="0dip"
-            android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:background="@drawable/light_grey_bg"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/light_grey_bg_selector"
             android:text="下一题" />
     </LinearLayout>
-    <ScrollView 
-        android:layout_height="fill_parent"
+
+    <ScrollView
         android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@id/menu_layout"
         android:layout_marginBottom="@dimen/buttons_height"
-        android:paddingBottom="5dip"
-        android:layout_alignBottom="@id/menu_layout">
-    <ViewFlipper
-        android:id="@+id/question_filpper" 
-        android:layout_width="fill_parent" android:layout_height="fill_parent" >
-    </ViewFlipper>
-        </ScrollView>
-    
+        android:paddingBottom="5dip" >
+
+        <ViewFlipper
+            android:id="@+id/question_filpper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </ViewFlipper>
+    </ScrollView>
+
     <ImageView
-        android:id="@+id/result_correct" 
+        android:id="@+id/result_correct"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_centerInParent="true"
         android:background="@drawable/right"
-        android:layout_width="40dip"
-        android:layout_height="40dip"
-        android:visibility="gone"
-        android:layout_centerInParent="true"
-        />
-    
+        android:visibility="gone" />
+
     <ImageView
-        android:id="@+id/result_wrong" 
-        android:background="@drawable/wrong"
+        android:id="@+id/result_wrong"
         android:layout_width="40dip"
         android:layout_height="40dip"
-        android:visibility="gone"
         android:layout_centerInParent="true"
-        />
+        android:background="@drawable/wrong"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background"
+        android:gravity="center_vertical"
+        android:text="你暂时还木有做错的题目。（在练习过程中，所有做错过题都会出现在这里）"
+        android:textColor="#FF696969"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
 </RelativeLayout>

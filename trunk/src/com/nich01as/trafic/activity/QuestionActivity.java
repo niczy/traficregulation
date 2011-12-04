@@ -9,16 +9,22 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 import com.loopj.android.image.SmartImageView;
 import com.nich01as.trafic.Question;
 import com.nich01as.trafic.QuestionManager;
@@ -46,6 +52,8 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     private View mCurrentQuestionView;
     private View mAnotherQuestionView;
     protected TraficDB mDb;
+    private AdView mAdView;
+    private LinearLayout mAdLayout;
    
     
     /** Called when the activity is first created. */
@@ -70,6 +78,9 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
         mQuestionFlipper.addView(mAnotherQuestionView);
         mQuestionFlipper.setDisplayedChild(0);
         mQuestionManager = QuestionManager.getInstance(this);
+        mAdView = new AdView(this, AdSize.BANNER, "a14edb312d23d69");
+        mAdLayout = (LinearLayout) findViewById(R.id.ad);
+        mAdLayout.addView(mAdView);
     }
     
     @Override
@@ -87,7 +98,7 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     @Override
     public void onResume() {
         super.onResume();
-        mIdx = getCurrentQuestionId();
+        //mIdx = getCurrentQuestionId();
         if (mIdx == -1) {
 
         } else {
@@ -99,6 +110,8 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
                 e.printStackTrace();
             }
         }
+        AdRequest adRequest = new AdRequest();
+        mAdView.loadAd(adRequest);
     }
     
     private void prepareQuestionView(Question question, View view) {
@@ -232,15 +245,12 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     protected void onAnswerCorrect(int questionId) {
     }
     
-    protected int getCurrentQuestionId() {
-        return mIdx;
+    protected void setCurrentQuestionId(int id) {
+        mIdx = id;
     }
-
-    private void showQuestion(int idx) {
-        Intent intent = new Intent(this, QuestionActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.putExtra(EXTRA_INDEX, idx);
-        startActivity(intent);
+    
+    protected final int getCurrentQuestionId() {
+        return mIdx;
     }
 
     @Override

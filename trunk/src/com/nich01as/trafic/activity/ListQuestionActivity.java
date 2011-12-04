@@ -27,6 +27,11 @@ public abstract class ListQuestionActivity extends QuestionActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mQuestions = getQuestionList();
+        if (mQuestions.size() == 0) {
+            setCurrentQuestionId(-1);
+        } else {
+            setCurrentQuestionId(mQuestions.get(mListIdx).getIndex());
+        }
     }
     
     @Override
@@ -43,14 +48,6 @@ public abstract class ListQuestionActivity extends QuestionActivity {
     
     protected abstract List<Question> getQuestionList();
     
-    @Override
-    protected int getCurrentQuestionId() {
-        if (mQuestions.size() == 0) {
-            return -1;
-        }
-        return mQuestions.get(mListIdx).getIndex();
-    }
-
     @Override
     protected int getNextQuestionId() {
         mListIdx++;
