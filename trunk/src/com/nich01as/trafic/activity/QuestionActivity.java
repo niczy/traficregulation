@@ -36,8 +36,6 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     
     private static final String TAG = "Trafic";
 
-    private static final String EXTRA_INDEX = "index";
-    
     private static final String BUNDLE_IDX = "idx";
     
     private int mIdx;
@@ -54,12 +52,14 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     protected TraficDB mDb;
     private AdView mAdView;
     private LinearLayout mAdLayout;
+    protected TraficApp mApp;
    
     
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mApp = TraficApp.getInstance();
         setContentView(R.layout.question_activity);
         
         findViewById(R.id.previous).setOnClickListener(this);
@@ -154,6 +154,8 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     protected abstract int getNextQuestionId();
     
     protected abstract int getPreviousQuestionId();
+    
+    protected abstract String getTag();
     
     private void showNextQuestion() throws JSONException {
         mIdx = getNextQuestionId();

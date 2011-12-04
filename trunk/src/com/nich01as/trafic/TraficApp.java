@@ -51,4 +51,14 @@ public class TraficApp extends Application {
         return mDb;
     }
     
+    public void recordQuestionIdx(String tag, int idx) {
+        mPreference.edit().putInt(tag, idx).commit();
+    }
+    
+    public int getQuestionIdx(String tag) {
+        return mPreference.getInt(tag, 0);
+    }
+    
+    
+    
 }
