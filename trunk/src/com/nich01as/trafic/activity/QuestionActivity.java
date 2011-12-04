@@ -124,7 +124,7 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
         mDescription = (TextView) view.findViewById(R.id.descripion);
         mRadioGroup.setOnCheckedChangeListener(this);
         mSmartImageView = (SmartImageView) view.findViewById(R.id.image);
-        mIndex.setText(Integer.toString(question.getIndex()));
+        mIndex.setText(Integer.toString(question.getIndex()+1));
         mDescription.setText(question.getDescription());
         mRadioGroup.removeAllViews();
         if (TextUtils.isEmpty(question.getImageUrl())) {
