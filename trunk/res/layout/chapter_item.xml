@@ -3,6 +3,8 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:layout_height="wrap_content"
+        android:background="@drawable/light_grey_bg_selector"
+        android:layout_marginTop="6dip"
         android:layout_width="fill_parent"
     >
 
