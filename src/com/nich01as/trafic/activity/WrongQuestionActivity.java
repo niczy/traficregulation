@@ -11,7 +11,10 @@ import java.util.List;
 
 import org.json.JSONException;
 
+import android.view.View;
+
 import com.nich01as.trafic.Question;
+import com.nich01as.trafic.R;
 
 /**
  *
@@ -22,11 +25,16 @@ public class WrongQuestionActivity extends ListQuestionActivity {
 
     @Override
     protected List<Question> getQuestionList() {
+        List<Question> ret;
         try {
-            return mDb.getWrongQuestions();
+            ret = mDb.getWrongQuestions();
         } catch (JSONException e) {
-            return new ArrayList<Question>(0);
+            ret = new ArrayList<Question>(0);
         }
+        if (ret.size() == 0) {
+            findViewById(R.id.empty).setVisibility(View.VISIBLE);
+        }
+        return ret;
     }
     
     @Override

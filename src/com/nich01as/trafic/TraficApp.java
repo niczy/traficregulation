@@ -37,33 +37,14 @@ public class TraficApp extends Application {
         mInstance = this;
         mDb = new TraficDB(this);
         mPreference = PreferenceManager.getDefaultSharedPreferences(this);
-        if (!mPreference.getBoolean(DB_CREATED, false)) {
-            new AsyncTask<Void, Double, Boolean>() {
-
-                @Override
-                protected Boolean doInBackground(Void... params) {
-                    QuestionManager questionManager = QuestionManager.getInstance(TraficApp.this);
-                    TraficDB db = new TraficDB(TraficApp.this);
-                    for (int i = 0; i < questionManager.getTotalCount(); i++) {
-                        db.insertQuestion(questionManager.getQuestion(i));
-                        super.publishProgress(i * 1.0 / questionManager.getTotalCount());
-                    }
-                    return true;
-                }
-                
-                @Override
-                protected void onProgressUpdate(Double... progress) {
-                }
-
-                @Override
-                protected void onPostExecute(Boolean result) {
-                    if (result) {
-                        Log.d("Trafic", "data base succeed.");
-                        mPreference.edit().putBoolean(DB_CREATED, true).commit();
-                    }
-                }
-            }.execute(new Void[] {});
-        }
+    }
+    
+    public boolean isDbCreated() {
+        return mPreference.getBoolean(DB_CREATED, false);
+    }
+    
+    public void setDbCreated() {
+        mPreference.edit().putBoolean(DB_CREATED, true).commit();
     }
     
     public TraficDB getTraficDb() {
