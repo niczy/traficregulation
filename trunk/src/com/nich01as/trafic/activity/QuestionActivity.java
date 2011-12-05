@@ -115,6 +115,7 @@ public abstract class QuestionActivity extends Activity implements OnClickListen
     }
     
     private void prepareQuestionView(Question question, View view) {
+        mAnswerChecked = false;
         RadioGroup mRadioGroup;
         TextView mIndex;
         TextView mDescription;
