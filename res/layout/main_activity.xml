@@ -15,16 +15,11 @@
 
         <LinearLayout
             android:id="@+id/all_question"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical" >
+            style="@style/board_container" >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/all_questions_icon" />
+                style="@style/board_img"
+                android:src="@drawable/all_questions_icon" />
 
             <TextView
                 style="@style/board_item"
@@ -33,16 +28,11 @@
 
         <LinearLayout
             android:id="@+id/chapter"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical" >
+            style="@style/board_container" >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chapter_questions_icon" />
+                style="@style/board_img"
+                android:src="@drawable/chapter_questions_icon" />
 
             <TextView
                 style="@style/board_item"
@@ -58,16 +48,11 @@
 
         <LinearLayout
             android:id="@+id/wrong_question"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical" >
+            style="@style/board_container" >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wrong_questions_icon" />
+               style="@style/board_img"
+                android:src="@drawable/wrong_questions_icon" />
 
             <TextView
                 style="@style/board_item"
@@ -76,21 +61,15 @@
 
         <LinearLayout
             android:id="@+id/random"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical" >
+            style="@style/board_container">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/random_questons_icon" />
+                style="@style/board_img"
+                android:src="@drawable/random_questons_icon" />
 
             <TextView
                 style="@style/board_item"
                 android:text="随机练习" />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

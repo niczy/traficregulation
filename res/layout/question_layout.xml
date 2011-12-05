@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dip"
                 android:text="jdkjfkasjkfaskjf"
+                android:textColor="#ff515161"
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout 
