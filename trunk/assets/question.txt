@@ -299,7 +299,7 @@
 298	2	图中辅助标志的含义是确定主标志规定区间距离为左侧100米内的路段。	正确	错误			http://kspic.jxedt.com/2010pic/image189.jpg	1
 299	2	图中辅助标志的含义是确定主标志规定的区域。	正确	错误			http://kspic.jxedt.com/2010pic/image191.jpg	1
 300	2	图中标志的含义是表示前方300米道路封闭。	正确	错误			http://kspic.jxedt.com/2010pic/image193.jpg	1
-301	2	图中标志的含义是表示车辆向右行驶。  <w:wrap type='square' side='right'/>	正确	错误			http://kspic.jxedt.com/2010pic/image195.jpg	2
+301	2	图中标志的含义是表示车辆向右行驶。  	正确	错误			http://kspic.jxedt.com/2010pic/image195.jpg	2
 302	2	图中所示黄色中心双实线的含义是___。	准许车辆跨线超车	准许车辆掉头	警告车辆驾驶人路宽缩减或车道数减少,应谨慎行车,并禁止超车	准许车辆向左转弯	http://kspic.jxedt.com/2010pic/image197.jpg	3
 303	2	如图所示为车道分界线，用来分隔___。	同方向行驶的车辆	反方向行驶的车辆	机动车、非机动车和行人	机动车和非机动车	http://kspic.jxedt.com/2010pic/image199.jpg	1
 304	2	如图所示为人行横道线，是行人横穿___的标线。	街道	车行道	铁路道口	高速公路	http://kspic.jxedt.com/2010pic/image201.jpg	2
@@ -325,7 +325,7 @@
 324	2	图中所示斑马状导流线，表示车辆应按规定的路线行驶，可以压线或越线行驶。	正确	错误			http://kspic.jxedt.com/2010pic/image241.jpg	2
 325	2	图中所示黄色虚线内的专用车道，用以指示仅限于某车种行驶，其他车种可借道超车或长距离行驶。	正确	错误			http://kspic.jxedt.com/2010pic/image243.jpg	2
 326	2	图中所示地面标识是表示出租车专用上下客车位，其他车辆可临时停车。	正确	错误			http://kspic.jxedt.com/2010pic/image245.jpg	2
-327	2	图中所示路面标识为速度限制标记，用于限制车辆最高和最低行驶速度范围。   <w:wrap type='square'/>	正确	错误			http://kspic.jxedt.com/2010pic/image247.jpg	1
+327	2	图中所示路面标识为速度限制标记，用于限制车辆最高和最低行驶速度范围。   	正确	错误			http://kspic.jxedt.com/2010pic/image247.jpg	1
 328	2	图中警察手势为___信号。	左转弯	停止	右转弯	示意车辆靠边停车	http://kspic.jxedt.com/2010pic/image249.jpg	2
 329	2	图中交通警察的手势为___信号。	直行	转弯	停止	示意车辆靠边停车	http://kspic.jxedt.com/2010pic/image251.jpg	1
 330	2	图中交通警察的手势为___信号。	示意车辆靠边停车	左转弯待转	左转弯	右转弯	http://kspic.jxedt.com/2010pic/image253.jpg	3
